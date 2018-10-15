@@ -204,7 +204,7 @@ body {
     'aauthor'
     'aimg'
     'acontent';
-  grid-gap: 15px;
+  grid-gap: 20px;
 }
 .article-title {
   grid-area: aheader;

@@ -12,7 +12,29 @@
       <nav class="navbar navbar-expand-sm navbg navbar-dark justify-content-end">
           <div class="navbar-nav mx-3 font-weight-bold">
             <a class="nav-item nav-link navfontChange sizeChange" href="#">Contact Us</a>
-            <a class="nav-item nav-link navfontChange sizeChange" href="#">Login/Register</a>
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle navfontChange sizeChange mx-2" role="button" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Login/Register</a>
+              <div class="dropdown-menu px-4 py-2 dropPersonal" aria-labelledby="loginDropdown">
+                <form class="px-0 py-3">
+                  <div class="form-group">
+                    <label for="formEmail">Email address</label>
+                    <input type="email" class="form-control" id="formEmail" placeholder="email@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="formPassword">Password</label>
+                    <input type="password" class="form-control" id="formPassword" placeholder="Password">
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                    <label class="form-check-label" for="dropdownCheck">Remember me</label>
+                  </div>
+                  <button type="submit" class="btn btn-light">Sign in</button>
+                </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropPersonal" href="#">Register Now</a>
+                <a class="dropdown-item dropPersonal" href="#">Forgot password?</a>
+              </div>
+            </div>
           </div>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control-sm mr-sm-2" type="search" placeholder="Search this website..." aria-label="Search">

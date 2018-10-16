@@ -31,7 +31,7 @@ body {
   background-color: #877d5e !important;
 }
 /**Global Title/Nav Text Color Edit**/
-.contentHeader, .contentHeader.card-title, .eLink-link, .footer-icon.icon, .footer-TermsPriv a, .nav-link, .navbar-brand, .dropdown-item, .article-title, .aAuthor, .newsTitle, .bread-link {
+.contentHeader, .contentHeader.card-title, .eLink-link, .footer-icon.icon, .footer-TermsPriv a, .nav-link, .navbar-brand, .dropdown-item, .dropdown-menu, .article-title, .aAuthor, .newsTitle, .bread-link {
   color: #FFFC31 !important;
 }
 .dropdown-item.dropPersonal:hover {

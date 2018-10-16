@@ -217,7 +217,7 @@ body {
   grid-area: aimg;
   justify-self: center;
 }
-#article-contacnt-place {
+#article-content-place {
   grid-area: acontent;
 }
 /**News Block Config**/

@@ -736,7 +736,7 @@ body {
     width: 100%;
     text-align: center;
   }
-  form.form-inline {
+  form.form-inline.my-2 {
     justify-content: center;
   }
   /*Footer Config*/

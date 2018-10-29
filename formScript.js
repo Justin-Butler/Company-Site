@@ -17,7 +17,7 @@ function emailTest(email) {
 //Function to test if Password meets criteria
 //
 function passTest(pass) {
-  var pParam = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
+  var pParam = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:@])([^\s]){8,16}$/;
   var isGood = pParam.test(pass);
   if (!isGood) {
     noErrors = false;

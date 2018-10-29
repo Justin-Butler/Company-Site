@@ -57,7 +57,7 @@ function isSame(string1, string2) {
       //if Passwords don't match
       else {
         noErrors = false;
-        $('#pWordCError').css("display", "none");
+        $('#pWordCError').css("display", "block");
       }
     }
   }

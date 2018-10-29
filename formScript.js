@@ -57,35 +57,39 @@ function isSame(string1, string2) {
       //if Passwords don't match
       else {
         noErrors = false;
-        $('#pWordCError').css("display", "block");
+        $('#pWordCError').css("display", "none");
       }
     }
   }
 }
-function fieldFilled(input, num) {
+function fieldFilled(input, ref) {
+  var invalid = /(^[A-Z]{1}$)|(^[A-Z] $)/g;
   //If Required Fields are Blank
-  if (input === "") {
+  if ((input === "")||invalid.test(input)) {
     noErrors = false;
-    if (num === 1) {
+    if (ref === 1) {
       $('#fNameError').css("display", "block");
     }
-    else if (num === 2) {
+    else if (ref === 2) {
       $('#lNameError').css("display", "block");
     }
-    else if (num === 3) {
+    else if (ref === 3) {
       $('#securityAnsError').css("display", "block");
     }
   }
   //If Required Fields are Completed
   else {
-    if (num === 1) {
+    if (ref === 1) {
       $('#fNameError').css("display", "none");
+      $('#first_name').val($.trim(input));
     }
-    else if (num === 2) {
+    else if (ref === 2) {
       $('#lNameError').css("display", "none");
+      $('#last_name').val($.trim(input));
     }
-    else if (num === 3) {
+    else if (ref === 3) {
       $('#securityAnsError').css("display", "none");
+      $('#security_Ans').val($.trim(input));
     }
   }
 }

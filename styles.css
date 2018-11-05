@@ -11,34 +11,44 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 /***Global Text/Color Scheme Edits***/
-.footerContainer, .subFooterContainer, .dropdown-menu.dropPersonal, .navbg {
-  background-color: #434D4E;
+.footerContainer, .subFooterContainer, .navbg {
+  background-color: rgba(255, 255, 255, 0);
+}
+.dropdown-menu.dropPersonal {
+  background-color: #4484CE;
 }
 /*Footer Block Colors*/
 #eLinks, #contactUs, #socialMedia, #accreditRecog {
-  background-color: #5C696A;
+  background-color: #1f497a;
   border-radius: 5px;
+  box-shadow: 1px 1px 2px;
 }
 /*Page Body Color*/
+body {
+  background: linear-gradient(to bottom, #4484CE, #72a2da );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 .outerGridContainer, .fValidate {
-  background-color: #5C415D;
+  background-color:rgba(255, 255, 255, 0);
 }
 /*Breadcrumb Divider Color*/
 .breadcrumb-item+.breadcrumb-item::before {
   color: #5C415D !important;
 }
 .contentLeftContain, .card.card-background, .articleContain, .newsContain, .breadcrumb, .formContainer {
-  background-color: #877d5e !important;
+  background-color: #1f497a !important;
+  box-shadow: 1px 1px 2px;
 }
 /**Global Title/Nav Text Color Edit**/
 .contentHeader, .contentHeader.card-title, .eLink-link, .footer-icon.icon, .footer-TermsPriv a, .nav-link, .navbar-brand, .dropdown-item, .dropdown-menu, .article-title, .aAuthor, .newsTitle, .bread-link, .formLabel, .fValidate {
-  color: #FFFC31 !important;
+  color: #ffffff !important;
 }
 .dropdown-item.dropPersonal:hover {
-  background-color: #5C696A;
+  background-color: #2b62a1;
 }
 .nav-link:hover, .eLink-link:hover, .linkHover:hover, .footer-TermsPriv a:hover, aAuthor:hover, .newsTitle:hover, .aAuthor:hover, .bread-link:hover {
-  color: #ffffff !important;
+  color: #cccccc !important;
   text-decoration: none;
 }
 .contentHeader, .contentHeader.card-title, .article-title, .aAuthor, .newsTitle {

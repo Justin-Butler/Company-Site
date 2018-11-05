@@ -477,6 +477,7 @@ body {
 .eLink-link {
   cursor: pointer;
   font-size: 20px;
+  font-weight: bold;
 }
 .eLinkminiContainer i {
   font-size: 48px;

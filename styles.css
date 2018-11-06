@@ -34,7 +34,7 @@ body {
 }
 /*Breadcrumb Divider Color*/
 .breadcrumb-item+.breadcrumb-item::before {
-  color: #5C415D !important;
+  color: #ffffff !important;
 }
 .contentLeftContain, .card.card-background, .articleContain, .newsContain, .breadcrumb, .formContainer {
   background-color: #1f497a !important;

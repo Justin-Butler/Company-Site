@@ -93,6 +93,32 @@ function fieldFilled(input, ref) {
     }
   }
 }
+//
+//
+//
+function dobChecker(val, index) {
+  if (val === null) {
+    noErrors = false;
+    //Unpopulated Month Field
+    if (index === 1) {
+      $('#monthError').css("display", "block");
+    }
+    //Unpopulated Year Field
+    else {
+      $('#yearError').css("display", "block");
+    }
+  }
+  else {
+    //Populated Month Field
+    if (index === 1) {
+      $('#monthError').css("display", "none");
+    }
+    //Populated Year Field
+    else {
+      $('#yearError').css("display", "none");
+    }
+  }
+}
 function termAndCondChecker(arg) {
   //If Not Checked
   if (!arg) {
@@ -106,6 +132,7 @@ function termAndCondChecker(arg) {
 
 //Global Variables 
 var noErrors;
+var leapYear;
 
 //
 //Event Listeners
@@ -175,6 +202,60 @@ $('#security_Ans').on('input', function() {
     $(this).val(current);
   }
 });
+//Date of Birth Day changer
+$('#month_Birth').on('change', function() {
+  var check = Number($(this).val());
+  //Check if Month has atleast 30 days
+  if (check !== 2) {
+    $('#day_Birth').append('<option value="29">29</option>');
+    $('#day_Birth').append('<option value="30">30</option>');
+    $('#day_Birth option[value="31"]').remove();
+    //Check if Month has 31 days
+    if (((check % 1) === 0 && check <= 7)||((check % 2) === 0 && check > 7)) {
+      $('#day_Birth').append('<option value="31">31</option>');
+    }
+  } 
+  //If month is February.
+  else if (leapYear === true) {
+    $('#day_Birth option[value="31"]').remove();
+    $('#day_Birth option[value="30"]').remove();
+  }
+  else {
+    $('#day_Birth option[value="31"]').remove();
+    $('#day_Birth option[value="30"]').remove();
+    $('#day_Birth option[value="29"]').remove();
+  }
+});
+//Leap Year Check 
+$('#year_Birth').on('change', function() {
+  var check = Number($(this).val());
+  if (check % 4 !== 0) {
+    leapYear = false;
+    if (Number($('#month_Birth').val()) === 2) {
+      $('#day_Birth option[value="29"]').remove();
+    }
+  }
+  else if (check % 100 !== 0) {
+    leapYear = true;
+    if (Number($('#month_Birth').val()) === 2) {
+      $('#day_Birth option[value="29"]').remove();
+      $('#day_Birth').append('<option value="29">29</option>');
+    }
+  }
+  else if (check % 400 !== 0) {
+    leapYear = false;
+    if (Number($('#month_Birth').val()) === 2) {
+      $('#day_Birth option[value="29"]').remove();
+    }
+  }
+  else {
+    leapYear = true;
+    if (Number($('#month_Birth').val()) === 2) {
+      $('#day_Birth option[value="29"]').remove();
+      $('#day_Birth').append('<option value="29">29</option>');
+    }
+  }
+});
 //Submit Button Validation Listener
 $('#submit').click(function(event){
   noErrors = true;
@@ -192,7 +273,8 @@ $('#submit').click(function(event){
   //Security Answer Check
   fieldFilled($('#security_Ans').val(), 3);
   //Remove white spaces after strings
-  
+  dobChecker($('#month_Birth').val(), 1);
+  dobChecker($('#year_Birth').val(), 2);
   //Check if Terms and Conditions are accepted
   termAndCondChecker($('#tandcBox').prop("checked"));
   //Check if noErrors is still true
